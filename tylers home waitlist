@@ -1,0 +1,56 @@
+/**
+ * v0 by Vercel.
+ * @see https://v0.dev/t/rexi3KfkkTb
+ * Documentation: https://v0.dev/docs#integrating-generated-code-into-your-nextjs-app
+ */
+import { Label } from "@/components/ui/label"
+import { Input } from "@/components/ui/input"
+import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from "@/components/ui/select"
+import { Button } from "@/components/ui/button"
+
+export default function Component() {
+  return (
+    <div className="max-w-md mx-auto p-6 bg-background rounded-lg shadow-lg">
+      <div className="space-y-4">
+        <div className="text-center">
+          <h2 className="text-3xl font-['Roboto'] font-bold text-[#ff6b00]">Join the Tyler's Home Waitlist</h2>
+          <p className="text-[#8b5a3a] font-['Poppins']">
+            Be the first to know about new product launches and exclusive offers.
+          </p>
+        </div>
+        <form className="space-y-4">
+          <div className="grid grid-cols-2 gap-4">
+            <div className="space-y-2">
+              <Label className="font-['Montserrat'] text-[#a57b4d]">Name</Label>
+              <Input className="font-['Poppins'] text-[#8b5a3a] rounded-full" placeholder="Enter your name" />
+            </div>
+            <div className="space-y-2">
+              <Label htmlFor="email" className="font-['Montserrat'] text-[#a57b4d] font-medium">
+                Email
+              </Label>
+              <Input type="email" placeholder="Enter your email" className="font-['Poppins'] rounded-full" />
+            </div>
+          </div>
+          <div className="space-y-2">
+            <Label className="font-['Montserrat'] text-[#a57b4d]">Choose a product</Label>
+            <Select id="interest">
+              <SelectTrigger className="rounded-none bg-primary text-primary-foreground">
+                <SelectValue placeholder="Select an option" className="font-['Montserrat']" />
+              </SelectTrigger>
+              <SelectContent className="rounded-none bg-primary text-primary-foreground">
+                <SelectItem value="lighting">Lighting</SelectItem>
+                <SelectItem value="decor">Decor</SelectItem>
+                <SelectItem value="candles">Candles & Waxmelts</SelectItem>
+                <SelectItem value="lamps">Lamps & Wall Lights</SelectItem>
+                <SelectItem value="pillows and throw blankets">Pillows & Throw Blankets</SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
+          <Button className="w-full rounded-full font-['Montserrat'] text-lg text-[#a57b4d] hover:text-[#8b5a3a]">
+            Join the Waitlist
+          </Button>
+        </form>
+      </div>
+    </div>
+  )
+}
